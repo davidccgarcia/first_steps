@@ -11,5 +11,7 @@
         <li>{{ $note->note }}</li>
         @endforeach
     </ul>
+
+    <a href="{{ url('notes/create') }}">Create a note</a>
 </body>
 </html>

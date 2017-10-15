@@ -24,4 +24,12 @@ class NotesTest extends TestCase
             ->see('My first note')
             ->see('Second note');
     }
+
+    public function test_notes_create()
+    {
+        $this->visit('/notes')
+            ->click('Create a note')
+            ->seePageIs('/notes/create')
+            ->see('Creating a note');
+    }
 }

@@ -15,15 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/notes', function () {
+Route::get('/notes', function () {
 
-//     $notes = App\Note::all();
+    $notes = App\Note::all();
 
-//     return view('notes.index', compact('notes'));
-// });
+    return view('notes.index', compact('notes'));
+});
 
-Route::get('/notes/{id}/{slug?}', function ($id, $slug = null) {
-    $note = App\Note::find($id);
-
-    dd($note, $slug);
-})->where('id', '[0-9+]');
+Route::get('/notes/create', function () {
+    return '[Creating a note]';
+});
