@@ -38,4 +38,18 @@ class NotesTest extends TestCase
             ->see('My first note') // 8
             ->seeInDatabase('notes', ['note' => 'My first note']); // 9
     }
+
+    public function test_notes_summary_and_notes_details()
+    {
+        $text = 'Maxime accusamus quasi inventore temporibus aperiam. Vitae quo omnis in expedita repudiandae iusto.';
+
+        $note = Note::create(['note' => $text]);
+
+        $this->visit('notes')
+            ->see('Maxime accusamus')
+            ->dontSee('repudiandae iusto')
+            ->seeLink('View note')
+            ->click('View note')
+            ->see($text);
+    }
 }

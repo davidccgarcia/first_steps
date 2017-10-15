@@ -8,10 +8,13 @@
         @foreach ($notes as $note)
         <li class="list-group-item">
             @if ($note->category)
-                {{ $note->category->name }}: {{ $note->note }}
+                <span class="label label-info">{{ $note->category->name }}</span>:
             @else 
-                <span>Other Category</span>: {{ $note->note }}
+                <span class="label label-info">Other Category</span>:
             @endif
+
+            {{ substr($note->note, 0, 50) }}...
+            <a href="{{ url('notes', $note->id) }}">View note</a>
         </li>
         @endforeach
     </ul>

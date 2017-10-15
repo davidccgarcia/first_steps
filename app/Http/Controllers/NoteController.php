@@ -32,4 +32,11 @@ class NoteController extends Controller
 
         return redirect('notes');
     }
+
+    public function show($note)
+    {
+        $note = Note::findOrFail($note);
+
+        return view('notes/details')->with('note', $note);
+    }
 }
