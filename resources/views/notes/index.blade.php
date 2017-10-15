@@ -2,12 +2,13 @@
 
 @section('content')
     <h1>Notes list</h1>
-
-    <ul>
+    <a href="{{ url('notes/create') }}" class="btn btn-primary">Create a note</a>
+    <br><br>
+    <ul class="list-group">
         @foreach ($notes as $note)
-        <li>{{ $note->note }}</li>
+        <li class="list-group-item">{{ $note->note }}</li>
         @endforeach
     </ul>
 
-    <a href="{{ url('notes/create') }}" class="badge badge-primary">Create a note</a>
+    {!! $notes->render() !!}
 @endsection
