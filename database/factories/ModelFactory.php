@@ -25,3 +25,9 @@ $factory->define(App\Note::class, function ($faker) {
         'note'  => $faker->paragraph
     ];
 });
+
+$factory->define(App\Category::class, function ($faker) {
+    return [
+        'name'  => $faker->name
+    ];
+});

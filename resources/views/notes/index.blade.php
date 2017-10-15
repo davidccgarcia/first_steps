@@ -6,7 +6,13 @@
     <br><br>
     <ul class="list-group">
         @foreach ($notes as $note)
-        <li class="list-group-item">{{ $note->note }}</li>
+        <li class="list-group-item">
+            @if ($note->category)
+                {{ $note->category->name }}: {{ $note->note }}
+            @else 
+                <span>Other Category</span>: {{ $note->note }}
+            @endif
+        </li>
         @endforeach
     </ul>
 
