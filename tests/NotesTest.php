@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class NotesTest extends TestCase
 {
+    use WithoutMiddleware;
     /**
      * A basic test example.
      *
@@ -27,9 +28,14 @@ class NotesTest extends TestCase
 
     public function test_notes_create()
     {
-        $this->visit('/notes')
-            ->click('Create a note')
-            ->seePageIs('/notes/create')
-            ->see('Create a note');
+        $this->visit('/notes') // 1
+            ->click('Create a note') // 2
+            ->seePageIs('/notes/create') // 3
+            ->see('Create a note') // 4
+            ->type('My first note', 'note') // 5
+            ->press('Add a note') // 6 
+            ->seePageIs('/notes') // 7
+            ->see('My first note') // 8
+            ->seeInDatabase('notes', ['note' => 'My first note']); // 9
     }
 }
