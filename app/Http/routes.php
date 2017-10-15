@@ -23,5 +23,5 @@ Route::get('/notes', function () {
 });
 
 Route::get('/notes/create', function () {
-    return '[Creating a note]';
+    return view('notes.create');
 });

@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Notes list</title>
-</head>
-<body>
+@extends('partials.layout')
+
+@section('content')
     <h1>Notes list</h1>
 
     <ul>
@@ -12,6 +9,5 @@
         @endforeach
     </ul>
 
-    <a href="{{ url('notes/create') }}">Create a note</a>
-</body>
-</html>
+    <a href="{{ url('notes/create') }}" class="badge badge-primary">Create a note</a>
+@endsection

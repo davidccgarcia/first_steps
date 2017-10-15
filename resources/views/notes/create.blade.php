@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create a note</title>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('partials.layout')
+
+@section('content')
+
+@endsection()
