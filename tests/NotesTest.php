@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class NotesTest extends TestCase
 {
-    use WithoutMiddleware;
+    use DatabaseTransactions;
     /**
      * A basic test example.
      *
