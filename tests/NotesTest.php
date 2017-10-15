@@ -30,6 +30,6 @@ class NotesTest extends TestCase
         $this->visit('/notes')
             ->click('Create a note')
             ->seePageIs('/notes/create')
-            ->see('Creating a note');
+            ->see('Create a note');
     }
 }
